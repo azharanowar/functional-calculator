@@ -17,20 +17,11 @@ document.getElementById("calculatorKeysSection").addEventListener('click', funct
                 expression( targetedEventValue );
                 const fullExpressionSecondLastIndex = parseFloat( fullExpression[fullExpression.length - 2] );
                 const fullExpressionLastIndex = parseFloat( fullExpression[fullExpression.length - 1] );
-                console.log( fullExpressionSecondLastIndex, fullExpressionLastIndex )
 
                 if ( isNaN( fullExpressionSecondLastIndex ) && isNaN(fullExpressionLastIndex) ) {
                     fullExpression = fullExpression.slice(0, fullExpression.length - 2) + targetedEventValue;
                     expression('')
                 }
-
-                // for ( i = 0; i < fullExpression.length; i++ ) {
-                //     console.log(fullExpression[i], fullExpression[i+1]);
-                //     console.log(isNaN(parseFloat(fullExpression[i])), isNaN(parseFloat(fullExpression[i+1])));
-                //     if ( isNaN(parseFloat(fullExpression[i])) && isNaN(parseFloat(fullExpression[i+1])) ) {
-                //         console.log("Hello")
-                //     }
-                // }
                 break;
                 
         }
@@ -51,7 +42,8 @@ function backspace() {
 }
 
 function resultCalculation() {
-    const result = eval(fullExpression);
+    // const result = eval(fullExpression);
+    const result = Function("return " + fullExpression)();
     document.getElementById("resultDisplay").innerText = result;
     fullExpression = result;
     expression('')
