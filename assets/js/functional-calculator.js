@@ -44,9 +44,11 @@ function backspace() {
 function resultCalculation() {
     // const result = eval(fullExpression);
     const result = Function("return " + fullExpression)();
-    document.getElementById("resultDisplay").innerText = result;
-    fullExpression = result;
-    expression('')
+    if ( ! isNaN(result) ) {
+        document.getElementById("resultDisplay").innerText = result;
+        fullExpression = result;
+        expression('')
+    }
 }
 
 function clearDisplay() {
