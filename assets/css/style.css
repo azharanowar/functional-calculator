@@ -9,16 +9,9 @@ body {
     height: 580px;
     /* background: linear-gradient(120deg, rgba(124,128,213,1) 0%, rgba(0,0,69,1) 100%); */
     background: linear-gradient(120deg, rgba(16,32,45,90) 0%, rgba(23,24,26,90) 100%);
-
     border: 1px solid #004ebf;
     margin: 0 auto;
     margin-bottom: auto;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
 }
 
 .custom-bg-1 {
@@ -38,6 +31,12 @@ body {
 
 .calculator-btn {
     cursor: pointer;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .plus-btn, .equal-btn {
